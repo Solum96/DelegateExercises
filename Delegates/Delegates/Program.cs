@@ -10,12 +10,22 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
+
+            // ÖVNING 1
             Rabbit bengt = new Rabbit();
             bengt.Jump += OnJump;
             bengt.Squeek += OnSqueek;
 
             bengt.DoJump();
             Console.WriteLine(bengt.DoSqueek());
+            Console.ReadKey();
+
+            // ÖVNING 2
+            Speaker speaker = new Speaker();
+            Listener listener = new Listener();
+
+            speaker.Order += listener.OnGiveOrder;
+            speaker.GiveOrder("Do this.");
             Console.ReadKey();
         }
 
