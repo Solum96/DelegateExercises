@@ -10,6 +10,23 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
+            Rabbit bengt = new Rabbit();
+            bengt.Jump += OnJump;
+            bengt.Squeek += OnSqueek;
+
+            bengt.DoJump();
+            Console.WriteLine(bengt.DoSqueek());
+            Console.ReadKey();
+        }
+
+        private static void OnSqueek()
+        {
+            Console.WriteLine("The rabbit seems frightened.");
+        }
+
+        public static void OnJump()
+        {
+            Console.WriteLine("The rabbit jumped!");
         }
     }
 }
