@@ -27,6 +27,11 @@ namespace Delegates
             speaker.Order += listener.OnGiveOrder;
             speaker.GiveOrder("Do this.");
             Console.ReadKey();
+
+            // ÖVNING 3
+            UsesCallback(OnJump);
+            Console.ReadKey();
+
         }
 
         private static void OnSqueek()
@@ -37,6 +42,11 @@ namespace Delegates
         public static void OnJump()
         {
             Console.WriteLine("The rabbit jumped!");
+        }
+        public static void UsesCallback(Action callback)
+        {
+            Console.WriteLine("The rabbit will now jump.");
+            callback();
         }
     }
 }
